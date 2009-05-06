@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.maven.tools.plugin.extractor.java;
+package org.efaps.maven_java5.org.apache.maven.tools.plugin.extractor.java;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -36,16 +36,17 @@ import org.apache.maven.plugin.descriptor.MojoDescriptor;
 import org.apache.maven.plugin.descriptor.PluginDescriptor;
 import org.apache.maven.plugin.descriptor.Requirement;
 import org.apache.maven.project.MavenProject;
-import org.apache.maven.tools.plugin.Component;
-import org.apache.maven.tools.plugin.Execute;
-import org.apache.maven.tools.plugin.Goal;
-import org.apache.maven.tools.plugin.Parameter;
 import org.apache.maven.tools.plugin.PluginToolsRequest;
 import org.apache.maven.tools.plugin.extractor.ExtractionException;
 import org.apache.maven.tools.plugin.extractor.MojoDescriptorExtractor;
-import org.apache.maven.tools.plugin.lifecycle.Phase;
 import org.codehaus.plexus.logging.AbstractLogEnabled;
 import org.codehaus.plexus.util.DirectoryScanner;
+
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.Component;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.Execute;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.Goal;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.Parameter;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.lifecycle.Phase;
 
 /**
  * Extracts a plugin configuration from the source. Only works for inline literals, not constant variables.
@@ -300,6 +301,15 @@ public class JavaMojoAnnotationDescriptorExtractor extends AbstractLogEnabled im
         return descriptors;
     }
 
+    /**
+     * Addition from eFaps to follow new api for maven 2.1.0!!!
+     *
+     * @see org.apache.maven.tools.plugin.extractor.MojoDescriptorExtractor#execute(org.apache.maven.tools.plugin.PluginToolsRequest)
+     * @param _pluginToolRequest
+     * @return
+     * @throws ExtractionException
+     * @throws InvalidPluginDescriptorException
+     */
     public List execute(final PluginToolsRequest _pluginToolRequest) throws ExtractionException,
         InvalidPluginDescriptorException {
       return execute(_pluginToolRequest.getProject(), _pluginToolRequest.getPluginDescriptor());

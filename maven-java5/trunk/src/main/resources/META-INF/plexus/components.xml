@@ -29,7 +29,7 @@
      -->
     <component>
       <role>org.apache.maven.tools.plugin.extractor.MojoDescriptorExtractor</role>
-      <implementation>org.efaps.maven.java5.EfapsAnnotationDescriptorExtractor</implementation>
+      <implementation>org.efaps.maven_java5.EfapsAnnotationDescriptorExtractor</implementation>
       <role-hint>java5</role-hint>
     </component>
 

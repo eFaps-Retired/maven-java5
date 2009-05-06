@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.maven.tools.plugin.lifecycle;
+package org.efaps.maven_java5.org.apache.maven.tools.plugin.lifecycle;
 
 public enum Phase
 {

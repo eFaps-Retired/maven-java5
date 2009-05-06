@@ -19,7 +19,7 @@
  * Last Changed By: $Author$
  */
 
-package org.efaps.maven.java5;
+package org.efaps.maven_java5;
 
 import java.io.File;
 import java.io.IOException;
@@ -59,14 +59,9 @@ import org.apache.maven.plugin.descriptor.Requirement;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.settings.MavenSettingsBuilder;
 import org.apache.maven.settings.Settings;
-import org.apache.maven.tools.plugin.Component;
-import org.apache.maven.tools.plugin.Execute;
-import org.apache.maven.tools.plugin.Goal;
-import org.apache.maven.tools.plugin.Parameter;
 import org.apache.maven.tools.plugin.PluginToolsRequest;
 import org.apache.maven.tools.plugin.extractor.ExtractionException;
 import org.apache.maven.tools.plugin.extractor.MojoDescriptorExtractor;
-import org.apache.maven.tools.plugin.lifecycle.Phase;
 import org.codehaus.plexus.PlexusConstants;
 import org.codehaus.plexus.PlexusContainer;
 import org.codehaus.plexus.component.repository.exception.ComponentLookupException;
@@ -76,6 +71,12 @@ import org.codehaus.plexus.logging.AbstractLogEnabled;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Contextualizable;
 import org.codehaus.plexus.util.DirectoryScanner;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
+
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.Component;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.Execute;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.Goal;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.Parameter;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.lifecycle.Phase;
 
 /**
  * Thanks to Jason van Zyl and his

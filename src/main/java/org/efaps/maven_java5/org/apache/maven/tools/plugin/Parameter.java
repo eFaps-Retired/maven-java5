@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.maven.tools.plugin;
+package org.efaps.maven_java5.org.apache.maven.tools.plugin;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
@@ -31,9 +31,19 @@ import java.lang.annotation.Target;
 @Retention( RUNTIME )
 @Target( { FIELD, METHOD } )
 @Inherited
-public @interface Component
+public @interface Parameter
 {
-    String role() default "";
+    String property() default "";
 
-    String roleHint() default "";
+    String alias() default "";
+
+    String expression() default "";
+
+    String defaultValue() default "";
+
+    String implementation() default "";
+
+    boolean required() default false;
+
+    boolean readonly() default false;
 }

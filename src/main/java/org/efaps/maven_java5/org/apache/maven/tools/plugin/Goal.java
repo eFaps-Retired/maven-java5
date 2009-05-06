@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.maven.tools.plugin;
+package org.efaps.maven_java5.org.apache.maven.tools.plugin;
 
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
@@ -26,19 +26,36 @@ import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import org.apache.maven.tools.plugin.lifecycle.Phase;
+import org.efaps.maven_java5.org.apache.maven.tools.plugin.lifecycle.Phase;
 
 @Documented
 @Retention( RUNTIME )
 @Target( TYPE )
 @Inherited
-public @interface Execute
+public @interface Goal
 {
-    Phase phase() default Phase.VOID;
+    /**
+     * Goal name
+     *
+     * @return
+     */
+    String name();
 
-    String goal() default "";
+    Phase defaultPhase() default Phase.VOID;
 
-    String lifecycle() default "";
+    String requiresDependencyResolutionScope() default "runtime";
 
-    String customPhase() default "";
+    String instantiationStrategy() default "per-lookup";
+
+    String executionStrategy() default "once-per-session";
+
+    boolean requiresProject() default true;
+
+    boolean aggregator() default false;
+
+    boolean requiresDirectInvocation() default false;
+
+    boolean requiresOnline() default false;
+
+    boolean inheritByDefault() default true;
 }

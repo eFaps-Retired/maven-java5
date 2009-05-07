@@ -155,44 +155,6 @@
           <target>1.5</target>
         </configuration>
       </plugin>
-
-       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-          <executions>
-            <execution>
-              <id>attach-sources</id>
-              <goals>
-                <goal>jar</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Attach JavaDoc -->
-        <plugin>
-          <inherited>true</inherited>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <executions>
-            <execution>
-              <id>attach-javadocs</id>
-              <goals>
-                <goal>jar</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Update Release Info -->
-        <plugin>
-          <inherited>true</inherited>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <configuration>
-            <updateReleaseInfo>true</updateReleaseInfo>
-          </configuration>
-        </plugin>
     </plugins>
     
     <extensions>
@@ -206,21 +168,81 @@
 
   <distributionManagement>
     <site>
-      <id>efaps-site</id>
+      <id>efaps</id>
+      <name>eFaps Maven-Java5 Site</name>
       <url>svn:https://efaps.googlecode.com/svn/site/maven-java5</url>
     </site>
     <repository>
       <uniqueVersion>false</uniqueVersion>
-      <id>efaps-maven-repo-released</id>
+      <id>efaps</id>
+      <name>eFaps Repository Released</name>
       <url>svn:https://efaps.googlecode.com/svn/repo/released</url>
     </repository>
     <snapshotRepository>
       <uniqueVersion>false</uniqueVersion>
-      <id>efaps-maven-repo-snapshot</id>
+      <id>efaps</id>
+      <name>eFaps Repository Snapshot</name>
       <url>svn:https://efaps.googlecode.com/svn/repo/snapshot</url>
     </snapshotRepository>
   </distributionManagement>
   
+  <!--  Profile for a release: Only in this case the source and JavaDoc will be attached -->
+  <profiles>
+    <profile>
+      <id>release-profile</id>
+
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+       
+      <build>
+        <plugins>
+          <!-- Attach Sources -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- Attach JavaDoc -->
+          <plugin>
+            <inherited>true</inherited>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- Update Release Info -->
+          <plugin>
+            <inherited>true</inherited>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <configuration>
+              <updateReleaseInfo>true</updateReleaseInfo>
+            </configuration>
+          </plugin>
+  
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
   
   <!-- ************************************************************************
   * Dependencies

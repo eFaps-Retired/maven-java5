@@ -25,10 +25,10 @@
 
 <project name="eFaps">
   <publishDate position="left" format="dd-MMMM-yyyy"/>
-  <bannerLeft>
+  <!-- bannerLeft>
     <src>/images/eFaps.png</src>
     <href>http://www.efaps.org/</href>
-  </bannerLeft>
+  </bannerLeft -->
   <!-- <bannerRight>
     <src>http://developer.berlios.de/bslogo.php?group_id=8903</src>
     <href>http://developer.berlios.de/projects/efaps/</href>
@@ -41,7 +41,7 @@
   
   <skin>
     <groupId>org.efaps</groupId>
-    <artifactId>eFaps-skin</artifactId>
+    <artifactId>efaps-skin</artifactId>
     <version>1.0-SNAPSHOT</version>
   </skin>
   

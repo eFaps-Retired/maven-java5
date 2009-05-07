@@ -40,7 +40,7 @@
   <name>maven-java5</name>
 
   <prerequisites>
-    <maven>2.0.9</maven>
+    <maven>2.0.6</maven>
   </prerequisites>
   
   <!-- Project Information -->
@@ -50,7 +50,7 @@
   <url>http://www.efaps.org</url>
   <licenses>
     <license>
-      <name>Apache License, Version 2.0</name>
+      <name>The Apache Software License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
     </license>
@@ -97,7 +97,7 @@
   <scm>
     <connection>scm:svn:http://efaps.googlecode.com/svn/maven-java5/trunk/</connection>
     <developerConnection>scm:svn:https://developername@efaps.googlecode.com/svn/maven-java5/trunk/</developerConnection>
-    <url>http://efaps.googlecode.com/svn//maven-java5/trunk/</url>
+    <url>http://efaps.googlecode.com/svn/maven-java5/trunk/</url>
   </scm>
   
   <!-- Reporting -->
@@ -263,5 +263,18 @@
 
   </dependencies>
 
-  
+  <repositories>
+    <repository>
+      <id>eFaps-Snapshot</id>
+      <name>eFaps Snapshot Repository</name>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <url>http://efaps.googlecode.com/svn/repo/snapshot</url>
+    </repository>
+  </repositories>
+
 </project>

@@ -37,7 +37,7 @@
     <groupId>org.efaps</groupId>
     <packaging>jar</packaging>
     <artifactId>maven-java5</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <name>maven-java5</name>
 

@@ -37,7 +37,7 @@
     <groupId>org.efaps</groupId>
     <packaging>jar</packaging>
     <artifactId>maven-java5</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>maven-java5</name>
 
@@ -47,8 +47,8 @@
 
     <!-- Project Information -->
     <description>
-    Maven plugin to retrieve the Java5 Annotation goals from the source code.
-  </description>
+        Maven plugin to retrieve the Java5 Annotation goals from the source code.
+    </description>
     <url>http://www.efaps.org</url>
     <licenses>
         <license>
@@ -160,7 +160,7 @@
                 </configuration>
             </plugin>
         </plugins>
-
+        <!-- needed for the page upload -->
         <extensions>
             <extension>
                 <groupId>org.jvnet.wagon-svn</groupId>

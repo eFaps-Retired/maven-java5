@@ -71,7 +71,6 @@ import org.codehaus.plexus.logging.AbstractLogEnabled;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Contextualizable;
 import org.codehaus.plexus.util.DirectoryScanner;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
-
 import org.efaps.maven_java5.org.apache.maven.tools.plugin.Component;
 import org.efaps.maven_java5.org.apache.maven.tools.plugin.Execute;
 import org.efaps.maven_java5.org.apache.maven.tools.plugin.Goal;
@@ -92,7 +91,9 @@ import org.efaps.maven_java5.org.apache.maven.tools.plugin.lifecycle.Phase;
  * @see org.apache.maven.tools.plugin.extractor.java.JavaMojoAnnotationDescriptorExtractor
  * @plexus.component role="org.apache.maven.tools.plugin.extractor.MojoDescriptorExtractor" role-hint="java5"
  */
-public class EfapsAnnotationDescriptorExtractor extends AbstractLogEnabled implements Contextualizable, MojoDescriptorExtractor {
+public class EfapsAnnotationDescriptorExtractor
+    extends AbstractLogEnabled
+    implements Contextualizable, MojoDescriptorExtractor {
 
   /**
    *Property key name of the the XML user settings file location.
@@ -486,10 +487,10 @@ public class EfapsAnnotationDescriptorExtractor extends AbstractLogEnabled imple
    * @see #PROP_KEY_USER_HOME
    */
   protected ArtifactRepository getLocalRepository() throws InvalidPluginDescriptorException {
-    String localRepositoryPath = System.getProperty(PROP_KEY_LOCAL_REPOSITORY_LOCATION);
+    String localRepositoryPath = System.getProperty(EfapsAnnotationDescriptorExtractor.PROP_KEY_LOCAL_REPOSITORY_LOCATION);
     if (localRepositoryPath == null)  {
 
-      final File userSettingsPath = new File(System.getProperty(PROP_KEY_USER_SETTINGS_XML_LOCATION)+"");
+      final File userSettingsPath = new File(System.getProperty(EfapsAnnotationDescriptorExtractor.PROP_KEY_USER_SETTINGS_XML_LOCATION)+"");
 
       try {
         final Settings settings = this.settingsBuilder.buildSettings(userSettingsPath);
@@ -504,7 +505,7 @@ public class EfapsAnnotationDescriptorExtractor extends AbstractLogEnabled imple
     }
     if (localRepositoryPath == null)  {
       localRepositoryPath =
-          new File(new File(System.getProperty(PROP_KEY_USER_HOME), ".m2"), "repository")
+          new File(new File(System.getProperty(EfapsAnnotationDescriptorExtractor.PROP_KEY_USER_HOME), ".m2"), "repository")
           .getAbsolutePath();
     }
 
